@@ -12,14 +12,16 @@ addToDo.addEventListener("click", function(){
 });
 
  function createNewToDo(textValue){
-
-   var newToDo = document.createElement('li');
-   newToDo.classList.add('list-item');
+   var parentDiv = document.getElementById('todo-container');
+   var originalUl = document.getElementById('list');
+   var newToDo = document.createElement('ul');
+   newToDo.classList.add('list');
    newToDo.innerText = textValue;
 
    //where the new list item will go in the DOM
-   var container = document.getElementById('grid-container-app');
-   document.body.insertBefore(newToDo, container);
+
+   parentDiv.insertBefore(newToDo, originalUl);
+
 
  }
 //add todo button linked with eventListener click
