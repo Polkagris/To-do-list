@@ -1,1 +1,35 @@
-ECHO is on.
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>To-do list</title>
+    <!-- stylesheet,img and fonts -->
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div id="grid-container-app">
+
+      <!--Header -->
+      <div id="grid-container-header">
+        <div id="input-box">
+          <input type="text" name="" value="" placeholder="Your to-do's here!">
+          <button type="button" name="button">add todo</button>
+        </div>
+      </div>
+
+      <!-- List with to-dos -->
+      <div id="grid-container-todos">
+        <ul id="list">
+          <li class="list-item">Go for a walk in the park</li>
+        </ul>
+        <button id="remove" type="button" name="button">Remove</button>
+        <button id="checked" type="button" name="button">Clear</button>
+      </div>
+    </div>
+
+  </body>
+  <!--javascript -->
+  <script type="text/javascript" src="app.js">
+
+  </script>
+</html>
