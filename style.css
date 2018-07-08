@@ -1,27 +1,31 @@
 body{
   max-width: 960px;
     margin: auto;
+    font-family: 'Montserrat', sans-serif;
 }
-
+/* container for entire app */
 #grid-container-app{
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(9, minmax(50px, auto));
-  background: pink;
+  background: lightgrey;
 }
+
 #grid-container-header{
   grid-column: 1 / 5;
-  grid-row: 1 / 2;
-  align-self: end;
+  grid-row: 1 / 3;
+//  display: grid;
   justify-self: center;
-  //width: 100%;
   background: green;
-  padding: 50px;
-  margin-left: 0 auto;
+  padding: 0 50px 0 50px;
 }
+/*
 #input-box input{
+  grid-column: 1 / 5;
+  grid-row: 1 / 3;
   padding: 20px;
 }
+*/
 #input-box button{
   padding: 20px;
   border: none;
@@ -37,36 +41,43 @@ body{
 }
 */
 #todo-container{
-  //grid-column: 1 / 5;
-  //grid-row: 3 / 4;
+    grid-column: 1 / 5;
+      grid-row: auto;
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  grid-auto-rows: repeat(auto, minmax(100px, auto));
+  //flex: 1 1 100%;
+  //grid-template-columns: 1 500px;
+  //grid-auto-rows: repeat(auto, minmax(100px, auto));
   background: white;
-  //margin: 0;
-  //align-self: center;
-  //list-style-type: none;
 }
 .list{
+  //grid-column: 1 / 5;
+  //grid-row: auto;
+  display: grid;
   font-size: 24px;
+  background: grey;
 }
-
-#list-item{
+/*
+.list-item{
   grid-column: 1 / 3;
   grid-row: 1 / 2;
   font-size: 24px;
 }
-#remove{
+*/
+.remove{
   grid-column: 3 / 4;
   grid-row: 1 / 2;
   height: 30px;
+  width: 150px;
   align-self: center;
+  justify-self: end;
   margin: 5px;
 }
-#checked{
+.checked{
   grid-column: 4 / 5;
   grid-row: 1 / 2;
   height: 30px;
+    width: 150px;
   align-self: center;
+    justify-self: end;
     margin: 5px;
 }
