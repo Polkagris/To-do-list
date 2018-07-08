@@ -1,6 +1,6 @@
 const text = document.getElementById('input-text-field');
 const addToDo = document.getElementById('add-todo');
-console.log(text);
+const remove = document.getElementById('remove-button');
 
 //add todo.innerHTML to variable
 addToDo.addEventListener("click", function(){
@@ -8,8 +8,18 @@ addToDo.addEventListener("click", function(){
     if(textValue){
       createNewToDo(textValue);
     }
+    //resets the input field after adding a new todo
       text.value = "";
 });
+//var remove = document.getElementById('remove-button');
+//remove.addEventListener("click", removeOldToDo);
+
+//remove todo by pressing remove button
+ function removeOldToDo(e){
+   var elementToRemove = this.parentNode;
+   console.log(this.parentNode);
+   this.parentNode.parentNode.removeChild(elementToRemove);
+ }
 
 //creating new todo to the DOM
  function createNewToDo(textValue){
@@ -20,22 +30,24 @@ addToDo.addEventListener("click", function(){
    newToDo.classList.add('list');
    newToDo.innerText = textValue;
 
-  //create remove button
-  var rmvButton = document.createElement('button');
-  rmvButton.classList.add('remove');
-  rmvButton.innerHTML = "Remove";
+
+   //create remove button
+   var rmvButton = document.createElement('button');
+   rmvButton.setAttribute("id", "remove-button");
+   rmvButton.innerHTML = "Remove";
+
+//event listener
+   var remove = document.getElementById('remove-button');
+   remove.addEventListener("click", removeOldToDo);
+
 
   //create checked button
   var cheButton = document.createElement('button');
-  cheButton.classList.add('checked');
+  cheButton.setAttribute("id", "checked-button");
   cheButton.innerHTML = "Checked";
+
    //where the new list-item will go in the DOM
    parentDiv.insertBefore(newToDo, originalUl);
    newToDo.appendChild(rmvButton);
    newToDo.appendChild(cheButton);
-
-
  }
-//add todo button linked with eventListener click
-//when clicked => save text to variable
-//create new #list item with text.innerHTML

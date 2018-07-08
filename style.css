@@ -3,29 +3,39 @@ body{
     margin: auto;
     font-family: 'Montserrat', sans-serif;
 }
-/* container for entire app */
-#grid-container-app{
+/* container for only the header */
+#grid-container-header{
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, minmax(50px, auto));
+  justify-self: center;
+  background: #006699;
+
+}
+/*all elements inside the header container */
+.header-box{
+  grid-column: 1 / 5;
+  grid-row: 1 / 3;
+  justify-self: center;
+  align-self: center;
+}
+#input-text-field{
+  padding: 10px;
+  border: none;
+}
+#add-todo{
+  padding: 10px;
+  border: none;
+}
+
+/* container for todo part of app */
+#grid-container-app{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(9, minmax(50px, auto));
   background: lightgrey;
 }
 
-#grid-container-header{
-  grid-column: 1 / 5;
-  grid-row: 1 / 3;
-//  display: grid;
-  justify-self: center;
-  background: green;
-  padding: 0 50px 0 50px;
-}
-/*
-#input-box input{
-  grid-column: 1 / 5;
-  grid-row: 1 / 3;
-  padding: 20px;
-}
-*/
 #input-box button{
   padding: 20px;
   border: none;
@@ -41,42 +51,39 @@ body{
 }
 */
 #todo-container{
-    grid-column: 1 / 5;
-      grid-row: auto;
+  grid-column: 1 / 5;
+  grid-row: auto;
   display: grid;
-  //flex: 1 1 100%;
-  //grid-template-columns: 1 500px;
-  //grid-auto-rows: repeat(auto, minmax(100px, auto));
   background: white;
 }
 .list{
-  //grid-column: 1 / 5;
-  //grid-row: auto;
-  display: grid;
-  font-size: 24px;
-  background: grey;
+  //display: grid;
+  font-size: 20px;
+  background: lightgrey;
+  margin: 5px;
 }
-/*
+
 .list-item{
-  grid-column: 1 / 3;
-  grid-row: 1 / 2;
-  font-size: 24px;
+  list-style-type: none;
 }
-*/
-.remove{
-  grid-column: 3 / 4;
+.list-button{
+  grid-column: 2 / 3;
   grid-row: 1 / 2;
+}
+#remove{
+  //grid-column: 3 / 4;
+  //grid-row: 1 / 2;
   height: 30px;
-  width: 150px;
+  width: 100px;
   align-self: center;
   justify-self: end;
   margin: 5px;
 }
-.checked{
-  grid-column: 4 / 5;
-  grid-row: 1 / 2;
+#checked{
+  //grid-column: 4 / 5;
+  //grid-row: 1 / 2;
   height: 30px;
-    width: 150px;
+    width: 100px;
   align-self: center;
     justify-self: end;
     margin: 5px;
