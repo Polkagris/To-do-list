@@ -2,6 +2,8 @@ const text = document.getElementById('input-text-field');
 const addToDo = document.getElementById('add-todo');
 const remove = document.getElementById('remove-button');
 
+
+
 //add todo.innerHTML to variable
 addToDo.addEventListener("click", function(){
   var textValue = document.getElementById('input-text-field').value;
@@ -11,15 +13,12 @@ addToDo.addEventListener("click", function(){
     //resets the input field after adding a new todo
       text.value = "";
 });
-//var remove = document.getElementById('remove-button');
-//remove.addEventListener("click", removeOldToDo);
+var listItems = document.getElementsByTagName("ul"); // or document.querySelectorAll("li");
+for (var i = 0; i < listItems.length; i++) {
+ listItems[i].onclick = function() {this.parentNode.removeChild(this);}
+}
 
-//remove todo by pressing remove button
- function removeOldToDo(e){
-   var elementToRemove = this.parentNode;
-   console.log(this.parentNode);
-   this.parentNode.parentNode.removeChild(elementToRemove);
- }
+
 
 //creating new todo to the DOM
  function createNewToDo(textValue){
@@ -36,9 +35,7 @@ addToDo.addEventListener("click", function(){
    rmvButton.setAttribute("id", "remove-button");
    rmvButton.innerHTML = "Remove";
 
-//event listener
-   var remove = document.getElementById('remove-button');
-   remove.addEventListener("click", removeOldToDo);
+
 
 
   //create checked button
